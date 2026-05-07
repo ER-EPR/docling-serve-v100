@@ -40,8 +40,11 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
+          file: Containerfile
           push: true
           tags: ghcr.io/${{ env.IMAGE_REPOSITORY }}:latest
           platforms: linux/amd64
           build-args: |
             UV_SYNC_EXTRA_ARGS=--no-group pypi --group cu126
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
