@@ -3,7 +3,7 @@ name: Build Docling Serve CU126 (V100)
 on:
   workflow_dispatch: # Allows you to manually trigger the build with a button click
   schedule:
-    - cron: '1 2 3 */3 *' # Optional: Automatically runs every Sunday at midnight to grab upstream updates
+    - cron: '1 2 3 */2 *' # Optional: Automatically runs every Sunday at midnight to grab upstream updates
 
 permissions:
   packages: write
